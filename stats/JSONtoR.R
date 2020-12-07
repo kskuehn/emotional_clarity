@@ -1,18 +1,14 @@
-# install.packages("jsonlite")
-# install.packages("plyr")
-# install.packages("Rcpp")
-# install.packages("gtools")
+## install.packages("jsonlite")
+## install.packages("plyr")
+## install.packages("Rcpp")
+## install.packages("gtools")
 library(Rcpp)
 library(jsonlite)
 library(plyr)      
 library(gtools) 
 
-
-
 # comment this out and write your own file path if applicable
-file = "/Users/addie/Desktop/EMAR/emotional-clarity-export.json"
-
-
+file = "/Users/kevinkuehn/Documents/EMAR/emotional_clarity/stats/ec-test-data-2020-10-21.json"
 
 # This function creates a csv file of the responses of all users
 # from the JSON file. 
@@ -67,11 +63,8 @@ json_to_df <- function(file) {
   final_df <- df[1:(nrow(df) - 1), ]
   View(final_df)
   # write csv
-  write.csv(final_df, "/Users/addie/Desktop/EMAR/responses_from_json.csv")
+  write.csv(final_df, "/Users/kevinkuehn/Documents/EMAR/emotional_clarity/stats/responses_from_json.csv")
 }
-
-
-
 
 # run this code
 json_to_df(file)
